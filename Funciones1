@@ -1,0 +1,33 @@
+-Este dia hice dos codigos los cuales son uno en el cual cuenta las vocales, y el otro es un chatbot basico:
+lista_vocales = ['a', 'e', 'i', 'o', 'u']
+
+def contar_vocales (frase):
+    novocales = 0
+    for char in frase:
+        if char in lista_vocales:
+            novocales += 1
+    print(f'{frase} tiene {novocales} vocales')
+contar_vocales('Veronica')
+-Este es el primer codigo en el cual se crea una funcion la cual se llama contar_vocales, y este como su nombre
+lo dice cuenta las vocales de una frase o mensaje.
+
+-Ahora bien esta este pequeño chatbot el cual me podria venir bien en el futuro:
+rules = {
+    'hola': 'Hola, ¿cómo estás?',
+    'adiós': '¡Hasta luego!',
+    'gracias': '¡De nada!',
+}
+
+def chatbot():
+    print("¡Hola! Soy un chatbot. ¿En qué puedo ayudarte?")
+    while True:
+        user_input = input("Tú: ").strip().lower()
+        if user_input == 'salir':
+            print("Chatbot: Adios!") 
+            break
+        response = rules.get(user_input, "Lo siento, no entiendo.")
+        print(f"Chatbot: {response}")
+chatbot()
+- En este como pueden ver es una funcion llamda chatbot, y tiene un diccionario de palabras el cual se pueden modificar, 
+yo me entretuve en una parte el cual era esta print("Chatbot: Adios!") el cual me daba error por que estaba asi 
+print("Chatbot": Adios!") le habia puesto una comilla al chatbot y la palabra adios estaba abierta y lo arregle y eso fue lo que hice el dia de hoy.
