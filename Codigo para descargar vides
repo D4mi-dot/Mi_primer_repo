@@ -1,0 +1,16 @@
+Codigo para descargar videos en youtube 
+from pytube import YouTube
+
+def descargar_video(url, path='./'):
+    try:
+        yt = YouTube(url)
+        stream = yt.streams.get_highest_resolution()
+        print(f"Descargando: {yt.title}...")
+        stream.download(output_path=path)
+        print("¡Descarga completada!")
+    except Exception as e:
+        print(f"Error: {str(e)}")
+
+# Ejecución
+url = input("Ingresa la URL del video: ")
+descargar_video(url)
