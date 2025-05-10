@@ -1,0 +1,36 @@
+Hola chico este dia no tengo nada de ganas de hacer codigo la verdad. 
+# Juego de Adivinanza de Números
+import random
+
+def juego_adivinanza():
+    print("¡Bienvenido al juego de adivinanzas!")
+    nombre = input("¿Cuál es tu nombre? ")
+    print(f"¡Hola {nombre}! Estoy pensando en un número entre 1 y 20.")
+    
+    numero_secreto = random.randint(1, 20)
+    intentos = 0
+    max_intentos = 5
+
+    while intentos < max_intentos:
+        try:
+            guess = int(input("\nTu intento: "))
+            intentos += 1
+
+            if guess < numero_secreto:
+                print("El número es mayor.")
+            elif guess > numero_secreto:
+                print("El número es menor.")
+            else:
+                print(f"¡Correcto! Lo adivinaste en {intentos} intentos.")
+                return
+
+            print(f"Te quedan {max_intentos - intentos} intentos.")
+        
+        except ValueError:
+            print("Error: Ingresa solo números enteros.")
+
+    print(f"\n¡Se acabaron los intentos! El número era {numero_secreto}.")
+
+# Ejecutar el juego
+if __name__ == "__main__":
+    juego_adivinanza()
